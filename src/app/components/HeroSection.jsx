@@ -27,8 +27,8 @@ const HeroSection = () => {
                         repeat={Infinity}
                     />
                     </h1>
-                    <p className='text-[#ADB7BE] text-base sm:text-lg lg:text-xl'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, accusamus.
+                    <p className='text-[#ADB7BE] text-base sm:text-lg lg:text-xl text-justify'>
+                    Hey I am a front-end developer proficient in JavaScript. Skilled in transforming design concepts into user-friendly interfaces. Collaborative team player,working closely with designers. Strong problem-solving and debugging abilities, optimizing performance for smooth user interactions. Up-to-date with latest trends and emerging technologies, continually enhancing skills to deliver innovative solutions.
                     </p>
                     <div>
                         <button className='px-5 py-3 rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-200 text-white w-full sm:w-fit'>Hire Me</button>
@@ -38,11 +38,12 @@ const HeroSection = () => {
                 <div className='col-span-5 place-self-center mt-4 lg:mt-0'>
                     <div className='rounded-full bg-[#181818] relative h-[250px] w-[250px] lg:w-[400px] lg:h-[400px]'>
                         <Image 
-                            src="/images/hero-image.png" 
+                            src="/images/profile1.jpg" 
                             alt="Hero Image" 
-                            className='absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
+                            className='absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-full'
                             width={300} 
                             height={300}
+                            
                         />
                     </div>
                 </div>
