@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import ProjectCard from './ProjectCard';
 import ProjectTag from './ProjectTag';
 
+
 const projectsData = [
     {
         id: 1,
@@ -54,39 +55,52 @@ const projectsData = [
         title: "Full-stack Roadmap",
         description: "Project 5 description",
         image: "./images/projects/6.png",
-        tag: ["All", "Web"],
+        tag: ["All", "Web", "Front-End"],
         gitUrl: "/",
         previewUrl: "/",
     },
 ];
 
-const ProjectSection = () => {
-    const [tag, setTag] = useState("All")
+const ProjectsSection = () => {
+    const [tag, setTag] = useState("All");
 
-    const handleTagChange = (newTag) =>{
-        setTag(newTag)
-    }
+    const handleTagChange = (newTag) => {
+        setTag(newTag);
+    };
+
+    const filteredProjects = projectsData.filter((project) =>
+        project.tag.includes(tag)
+    );
+
     return (
         <>
             <h2 className='text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12'>My Projects</h2>
             <div className='text-white flex flex-row justify-center items-center gap-2 py-6'>
-                <ProjectTag onClick={handleTagChange} name="All" isSelected ={tag === "All"}></ProjectTag>
-                <ProjectTag onClick={handleTagChange} name="Web" isSelected ={tag === "Web"}></ProjectTag>
-                <ProjectTag onClick={handleTagChange} name="Front-End" isSelected ={tag === "Front-End"}></ProjectTag>
+                {/* Render tags dynamically */}
+                {['All', 'Web', 'Front-End'].map((tagName) => (
+                    <ProjectTag
+                        key={tagName}
+                        name={tagName}
+                        isSelected={tag === tagName}
+                        onClick={handleTagChange}
+                    />
+                ))}
             </div>
             <div className='grid md:grid-cols-3 gap-8 md:gap-12'>
-                {
-                    projectsData.map((project) => <ProjectCard key={project.id} 
-                    title={project.title} 
-                    description={project.description} imgUrl={project.image}
-                    // ! after complete this portfolio then i am add gitUrl and livePreview
-                    // gitUrl={gitUrl}
-                    // previewUrl={project.previewUrl}
-                    />)
-                }
+                {/* Render filtered projects */}
+                {filteredProjects.map((project) => (
+                    <ProjectCard
+                        key={project.id}
+                        title={project.title}
+                        description={project.description}
+                        imgUrl={project.image}
+                        // gitUrl={project.gitUrl}
+                        // previewUrl={project.previewUrl}
+                    />
+                ))}
             </div>
         </>
     );
 };
 
-export default ProjectSection;
+export default ProjectsSection;
