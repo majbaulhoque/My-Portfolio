@@ -85,13 +85,13 @@ const AboutSection = () => {
               {" "}
               Certifications{" "}
             </TabButton>
-            <TabButton
+            {/* <TabButton
               selectTab={() => handleTabChange("reviews")}
               active={tab === "reviews"}
             >
               {" "}
               Reviews{" "}
-            </TabButton>
+            </TabButton> */}
           </div>
           <div className='mt-8'>{TAB_DATA.find((t) => t.id === tab).content}
           </div>

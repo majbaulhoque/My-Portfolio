@@ -11,20 +11,20 @@ const HeroSection = () => {
                     <h1 className="text-white mb-4 sm:text-5xl lg:text-6xl font-extrabold"><span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>Hello, I'm{" "}</span>
                     <br />
                     <TypeAnimation
-                        sequence={[
-                        
+                    sequence={[
+                        // Same substring at the start will only be typed out once, initially
                         'Kazi Ziaur Rahman Majba',
-                        1000,
+                        1000, // wait 1s before replacing "Mice" with "Hamsters"
                         'Web Developer',
                         1000,
-                        'Front-End Developer',
+                        'Front End Developer',
                         1000,
                         
                     ]}
-                        wrapper="span"
-                        speed={50}
-                        style={{ fontSize: '1em', display: 'inline-block' }}
-                        repeat={Infinity}
+                    wrapper="span"
+                    speed={40}
+                    style={{ fontSize: '1em', display: 'inline-block' }}
+                    repeat={Infinity}
                     />
                     </h1>
                     <p className='text-[#ADB7BE] text-base sm:text-lg lg:text-xl text-justify'>
