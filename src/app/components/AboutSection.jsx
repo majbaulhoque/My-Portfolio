@@ -15,7 +15,7 @@ const TAB_DATA = [
         <li>JavaScript-ES6</li>
         <li>React</li>
         <li>Next.js</li>
-        <li>React</li>
+        <li>My Sql</li>
       </ul>
     ),
   },

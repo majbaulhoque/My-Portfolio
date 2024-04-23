@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import NavLink from './NavLink';
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from './MenuOverlay';
-
+import Image from 'next/image';
 const navLinks = [
     {
         title: "About",
@@ -27,7 +27,15 @@ const Navbar = () => {
         top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100'>
             <div className='flex flex-wrap items-center justify-between mx-auto px-4 py-2'>
                 {/* <Link href={"/"} className='text-5xl text-white font-semibold'>LOGO</Link> */}
-                <a href={"/"} className='text-2xl md:text-5xl text-white font-semibold border-2 border-purple-700 px-4 py-2 shadow-inner'>Majba</a>
+                <Link href="/" className='text-2xl md:text-5xl text-white font-semibold border-2 border-purple-700 px-4 py-2 shadow-inner'>Majba</Link>
+                {/* <Link href="/">
+                <Image
+                    src="/p.png"
+                    alt="Description of the image"
+                    width={500}
+                    height={300}
+                />
+                </Link> */}
                 <div className='mobile-menu block md:hidden ml-52'>
                 {
                     !navbarOpen ? (
